@@ -9,13 +9,11 @@ app.use(cors());
 app.use(bodyParser.json({limit: '50mb'}));
 app.use(express.static('./dist/SampGridApp'));
 
-//postgres://icrhqaoywolcvf:c7178691a446d5457bf97e583856224b1eb5549267284321c07a39510dc8c966@ec2-54-83-27-165.compute-1.amazonaws.com:5432/d6c08hbrk19fc1
-
 var connection = mysql.createConnection({       
-    host: "ec2-54-83-27-165.compute-1.amazonaws.com:5432",
-	user: "icrhqaoywolcvf",  
-	password: "c7178691a446d5457bf97e583856224b1eb5549267284321c07a39510dc8c966",
-	database: "d6c08hbrk19fc1"
+    host: "192.168.100.114",
+	user: "user1",  
+	password: "user1@123",
+	database: "user4"
 });
 connection.connect();
 
