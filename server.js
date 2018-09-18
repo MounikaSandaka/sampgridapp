@@ -13,7 +13,7 @@ var connection = mysql.createConnection({
     host: "192.168.100.114",
 	user: "user1",  
 	password: "user1@123",
-	database:"user4"
+	database: "user4"
 });
 connection.connect();
 
