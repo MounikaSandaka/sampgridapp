@@ -19,7 +19,8 @@ connection.connect();
 
 //const PORT = 5000;
 
-var server_port = process.env.PORT || 5000;
+var server_port = process.env.OPENSHIFT_NODEJS_PORT || 5000
+var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
 
 app.get('/', (req,res) => {
     res.sendFile(path.join(__dirname, '/dist/SampGridApp/index.html'))
@@ -167,6 +168,7 @@ app.put('/delete', function(req, res){
 	});
 });
 
-app.listen(server_port, () =>{
-	console.log("Listening on " + server_port);
+server.listen(server_port, server_ip_address, function () {
+  console.log( "Listening on " + server_ip_address + ", port " + server_port )
 });
+
