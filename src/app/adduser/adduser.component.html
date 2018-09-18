@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+	<div id="wrapper">
+		<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" [routerLink]="" (click)="username()" href="/index/{{userName}}">{{userName}}</a>
+			</div>
+			<ul class="nav navbar-top-links navbar-right">				
+				<li class="dropdown">
+					<a title="Logout" [routerLink]="" (click)="logout()" href="http://localhost:5000">
+						<i class="fa fa-user fa-fw"></i>
+					</a>
+				</li>
+			</ul>
+			<div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">           
+						<li class="active">
+							<a [routerLink]="" (click)="dashboard()" href="/index/{{userName}}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+						</li>
+						<li>
+							<a [routerLink]="" (click)="gridview()" href="/table/{{userName}}"><i class="fa fa-table fa-fw"></i> GridView</a>
+						</li>
+                        <li>
+                            <a [routerLink]="" (click)="user()"><i class="fa fa-users fa-fw"></i> Users<div class="pull-right"><span class={{arrow}}></span></div></a>
+                            <ul class={{classname}}>
+                                <li>
+                                    <a [routerLink]="" (click)="adduser()" href="/adduser/{{userName}}" class="active">Add User</a>
+                                </li>
+                                <li>
+                                    <a [routerLink]="" (click)="userslist()" href="/userslist/{{userName}}">Users List</a>
+                                </li>                                
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                    </ul>
+				</div>
+                <!-- /.sidebar-collapse -->
+			</div>
+            <!-- /.navbar-static-side -->
+		</nav>
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Add User</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Register Form
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <form role="form">
+                                        <div class="form-group">
+                                            <label>Full Name</label>
+                                            <input #fname class="form-control" placeholder="Enter First Name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>User Name</label>
+                                            <input #uname class="form-control" placeholder="Enter User Name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Password</label>
+                                            <input #pass class="form-control" placeholder="Enter Password" type="password">
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-md-6">
+                                    <form role="form">
+                                        <div class="form-group">
+                                            <label>Confirm Password</label>
+                                            <input #cpass class="form-control" placeholder="Enter Confirm Password" type="password"s>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Mobile Number</label>
+                                            <input #mnumb class="form-control" placeholder="Enter Mobile Number" required/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Email</label>
+                                            <input #email class="form-control" placeholder="Enter Email">
+                                        </div>                               
+                                    </form>
+                                </div>                                
+                            </div>
+                            <button type="button" class="btn btn-success" (click)="submit(fname,uname,pass,cpass,mnumb,email)">Submit</button>
+                            <button type="button" class="btn btn-warning" (click)="cancel()">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>       
+    </div>
+</body>
+</html>
