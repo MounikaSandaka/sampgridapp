@@ -10,10 +10,10 @@ app.use(bodyParser.json({limit: '50mb'}));
 app.use(express.static('./dist/SampGridApp'));
 
 var connection = mysql.createConnection({       
-    host: "192.168.100.114",
-	user: "user1",  
-	password: "user1@123",
-	database: "user4"
+    host: "ec2-54-225-241-25.compute-1.amazonaws.com",
+	user: "kdjchzxgnfqkoi",  
+	password: "63cc1ccd5e38ec1f896902b9e2410e485bca8574595ecfa1ff4b553db296906f",
+	database: "d8aaorpohc3nbq"
 });
 connection.connect();
 
