@@ -163,7 +163,8 @@ app.put('/delete', function(req, res){
 	});
 });
 
-const port = process.env.PORT || 5000;
+const PORT = 5000;
+const port = process.env.PORT;
 
 app.listen(port, function () {
   console.log(`Listening on ${ port }`);
