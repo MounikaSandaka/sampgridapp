@@ -17,11 +17,6 @@ var connection = mysql.createConnection({
 });
 connection.connect();
 
-//const PORT = 5000;
-
-var port = process.env.OPENSHIFT_NODEJS_PORT || 5000
-var ip = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
-
 app.get('/', (req,res) => {
     res.sendFile(path.join(__dirname, '/dist/SampGridApp/index.html'))
 });
@@ -168,7 +163,9 @@ app.put('/delete', function(req, res){
 	});
 });
 
-app.listen(port, ip, function () {
-  console.log( "Listening on " + ip + ", port " + port)
+const port = process.env.PORT || 5000;
+
+app.listen(port, function () {
+  console.log(`Listening on ${ port }`);
 });
 
